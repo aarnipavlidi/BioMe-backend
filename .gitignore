@@ -1,0 +1,6 @@
+## Library
+node_modules/
+
+## Env files.
+.env.development
+.env.production
