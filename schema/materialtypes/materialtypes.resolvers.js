@@ -7,7 +7,7 @@ const resolvers = {
   Query: {
     getAllMaterialTypes: async () => {
       try {
-        const getMaterialTypes = await supabase.from('materialtypes').select('*');
+        const getMaterialTypes = await supabase.from('materialtypes').select('*').order('code', { ascending: true })
         console.log(getMaterialTypes)
         return getMaterialTypes.body;
       } catch (error) {
