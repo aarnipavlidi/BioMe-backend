@@ -14,6 +14,17 @@ const resolvers = {
         throw error
       }
     }
+  },
+  Mutation: {
+    getNearestCollectionSpots: async (_, { currentUserLocation, currentChosenMaterialTypes }) => {
+      try {
+        const findNearestCollectionspots = await supabase
+        .rpc('find_nearest_collectionspots', { currentUserLocation: currentUserLocation, currentMaterialTypes: currentChosenMaterialTypes });
+        return findNearestCollectionspots.body;
+      } catch (error) {
+        throw error
+      }
+    }
   }
 };
 
