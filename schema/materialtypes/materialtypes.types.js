@@ -1,11 +1,6 @@
 import { gql } from 'apollo-server';
 
 const typeDefs = gql`
-  input ChosenMaterialTypes {
-    code: Int!
-    name: String!
-  }
-
   type MaterialsArray {
     code: Int!
     name: String!
@@ -31,7 +26,7 @@ const typeDefs = gql`
   type Mutation {
     getNearestCollectionSpots(
       currentUserLocation: String!
-      currentChosenMaterialTypes: [ChosenMaterialTypes]
+      currentChosenMaterialTypes: String!
     ): [NearestCollectionSpots]
   }
 `

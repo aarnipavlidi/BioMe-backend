@@ -18,9 +18,9 @@ const resolvers = {
   Mutation: {
     getNearestCollectionSpots: async (_, { currentUserLocation, currentChosenMaterialTypes }) => {
       try {
-        const findNearestCollectionspots = await supabase
+        const findNearestCollectionSpots = await supabase
         .rpc('find_nearest_collectionspots', { currentUserLocation: currentUserLocation, currentMaterialTypes: currentChosenMaterialTypes });
-        return findNearestCollectionspots.body;
+        return findNearestCollectionSpots.body;
       } catch (error) {
         throw error
       }
